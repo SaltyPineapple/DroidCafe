@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OrderActivity">
+
+
+    <TextView
+        android:id="@+id/tv_orderItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="24sp"
+        android:textAlignment="center"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_nameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/nameLabel"
+        android:textSize="18sp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_orderItem"
+        />
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/enter_name"
+        android:inputType="textPersonName"
+
+        app:layout_constraintTop_toBottomOf="@id/tv_orderItem"
+        app:layout_constraintStart_toEndOf="@+id/tv_nameLabel"
+        />
+
+    <TextView
+        android:id="@+id/tv_addressLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/addressLabel"
+        android:textSize="18sp"
+
+        app:layout_constraintTop_toBottomOf="@id/tv_nameLabel"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
+
+    <MultiAutoCompleteTextView
+        android:id="@+id/et_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/enter_address"
+        android:inputType="textMultiLine"
+
+        app:layout_constraintTop_toBottomOf="@id/et_name"
+        app:layout_constraintStart_toEndOf="@id/tv_addressLabel"
+        />
+
+    <TextView
+        android:id="@+id/tv_phoneLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/phoneLabel"
+        android:textSize="18sp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_address"
+        />
+
+    <EditText
+        android:id="@+id/et_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/phoneHint"
+        android:inputType="phone"
+
+        app:layout_constraintTop_toBottomOf="@id/et_address"
+        app:layout_constraintStart_toEndOf="@+id/tv_phoneLabel"
+        />
+
+    <TextView
+        android:id="@+id/tv_noteLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/note"
+        android:textSize="18sp"
+
+        app:layout_constraintTop_toBottomOf="@id/tv_phoneLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <MultiAutoCompleteTextView
+        android:id="@+id/et_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:hint="@string/noteHint"
+        android:inputType="textCapSentences|textMultiLine"
+
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_noteLabel"
+        app:layout_constraintStart_toEndOf="@id/tv_noteLabel"
+        />
+
+    <TextView
+        android:id="@+id/tv_deliveryType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/choose_delivery_type"
+        android:textSize="18sp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_note"
+        />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_deliveryType"
+        >
+        <RadioButton
+            android:id="@+id/radio_sameDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/same_day_delivery"
+            />
+        <RadioButton
+            android:id="@+id/radio_nextDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/next_day_delivery"
+            />
+        <RadioButton
+            android:id="@+id/radio_pickup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/in_store_pickup"
+            />
+
+
+    </RadioGroup>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
